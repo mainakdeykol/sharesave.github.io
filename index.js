@@ -13,7 +13,7 @@ const copyURLBtn = document.querySelector("#copyURLBtn");
 const fileURL = document.querySelector("#fileURL");
 const emailForm = document.querySelector("#emailForm");
 
-const baseURL = "https://sharesavebymainak.onrender.com";
+const baseURL = "https://cors-ccia.onrender.com/https://sharesavebymainak.onrender.com";
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
 
