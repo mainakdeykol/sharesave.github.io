@@ -1,0 +1,244 @@
+:root {
+  --main-bg-color: #edf5fe;
+  --light-blue: #03a9f4;
+  --border-color: #0288d147;
+  --container-width: 500px;
+}
+
+body {
+  font-family: system-ui;
+  background-image:url(./5153829.jpg);
+  height: 98vh;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 250px;
+}
+
+.image-vector {
+  width: 50vw;
+  height: 50vh;
+  background: url(undraw-upload.svg) no-repeat center;
+  background-size: contain;
+}
+
+body,
+.upload-container,
+.drop-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-container,
+.drop-zone {
+  flex-direction: column;
+}
+
+.upload-container {
+  background:#c0e1ec;
+  border: 2px solid #7e888d;
+  border-radius: 25px;
+}
+
+.drop-zone {
+  background:rgb(239, 241, 243);
+  width: var(--container-width);
+  min-height: 200px;
+  border: 2px dashed #034c6d;
+  border-radius: 10px;
+  margin: 30px;
+  transition: 0.2s all ease-in;
+}
+
+/* will be added when user drags */
+.drop-zone.dragged {
+  background: var(--main-bg-color);
+  border-color: #ffffff;
+}
+
+.drop-zone input {
+  display: none;
+}
+
+.icon-container {
+  position: relative;
+  width: 75px;
+  height: 100px;
+}
+
+.icon-container img {
+  width: 75px;
+  position: absolute;
+  transition: transform 0.25s ease-in-out;
+  transform-origin: bottom;
+}
+
+.icon-container .center {
+  z-index: 10;
+}
+.icon-container .right,
+.icon-container .left {
+  filter: grayscale(0.5);
+  transform: scale(0.9);
+}
+
+.dragged .center {
+  transform: translateY(-5px);
+}
+.dragged .right {
+  transform: rotate(10deg) scale(0.9) translateX(20px);
+}
+.dragged .left {
+  transform: rotate(-10deg) scale(0.9) translateX(-20px);
+}
+
+.title {
+  font-size: large;
+}
+
+#browseBtn {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    height: 30px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 15px;
+}
+
+/* uploading progress styles */
+.progress-container {
+  border: 2px dashed #034c6d;
+  width: var(--container-width);
+  height: 70px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  position: relative;
+  display: none;
+}
+
+.progress-container .inner-container {
+  background: rgb(220, 234, 247);
+  margin: 10px 15px;
+  z-index: 2;
+  position: absolute;
+  width: calc(100% - 30px);
+}
+
+.progress-container .percent-container {
+  font-size: 14px;
+  margin: 5px;
+  opacity: 0.7;
+}
+
+.progress-container .bg-progress {
+  position: absolute;
+  background: var(--main-bg-color);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: transform 250ms linear;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.progress-container .progress-bar {
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: #03a9f4;
+  transition: transform 200ms linear;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* sharing container style */
+.sharing-container {
+  margin-bottom: 25px;
+  width: var(--container-width);
+  border-radius: 10px;
+  display: none;
+}
+
+.sharing-container p {
+  text-align: center;
+}
+
+.sharing-container .expire {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-top: 0;
+}
+
+.sharing-container .input-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sharing-container .input-container input {
+  width: 100%;
+  border-radius: 3px;
+  padding: 10px 15px;
+  font-size: 20px;
+  border: 2px dashed #034c6d;
+  border-radius: 6px;
+  background: #f5fcff;
+  color: #607d8b;
+}
+
+.sharing-container img {
+  height: 22px;
+  width: 30px;
+  position: absolute;
+  right: 7px;
+  top: 12px;
+  cursor: pointer;
+  background: #f5fcff;
+}
+.send-btn-container button {
+  font-size: 18px;
+  padding: 8px 40px;
+  margin-top: 15px;
+  background: var(--main-bg-color);
+  border: none;
+  border-radius: 5px;
+  color: #607d8b;
+  cursor: pointer;
+}
+
+ @media screen and (max-width: 900px) {
+  :root {
+    --container-width: 350px;
+  }
+}
+@media screen and (max-width: 600px){
+  :root {
+    --container-width: 250px;
+  } 
+}
