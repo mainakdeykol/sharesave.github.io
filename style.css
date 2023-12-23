@@ -32,6 +32,7 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .upload-container,
 .drop-zone {
@@ -42,6 +43,7 @@ body,
   background:#c0e1ec;
   border: 2px solid #7e888d;
   border-radius: 25px;
+  margin-top: 7rem;
 }
 
 .drop-zone {
@@ -232,6 +234,14 @@ body,
   cursor: pointer;
 }
 
+.foot{
+  margin-top: 7rem;
+  text-align: center;
+}
+
+.love{
+  color: #e25555;
+}
  @media screen and (max-width: 900px) {
   :root {
     --container-width: 350px;
