@@ -43,7 +43,6 @@ body,
   background:#c0e1ec;
   border: 2px solid #7e888d;
   border-radius: 25px;
-  margin-top: 6rem;
 }
 
 .drop-zone {
@@ -235,9 +234,10 @@ body,
 }
 
 .foot{
-  margin-top: 7rem;
+  position: absolute;
   text-align: center;
   z-index: 4;
+  bottom: 28px;
 }
 
 .love{
